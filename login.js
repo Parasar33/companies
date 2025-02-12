@@ -3,8 +3,7 @@
 // Hardcoded credentials
 const CREDENTIALS = {
     username: "admin",
-    // SHA-256 hash of "Pishu@2004"
-    passwordHash: "d554b517829a040cb3e3c4f993b7b6deadef6ce60d495554e38aeb70ffaeba86"
+    passwordHash: "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
 };
 
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
