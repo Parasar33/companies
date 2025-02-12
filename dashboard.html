@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Applications Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Job Applications Dashboard</h1>
+            <button onclick="logout()" class="btn logout-btn">Logout</button>
+        </div>
+
+        <!-- Application Form -->
+        <h2>Add New Application</h2>
+        <form id="applicationForm">
+            <input type="text" id="company" placeholder="Company Name" required>
+            <input type="url" id="jobLink" placeholder="Job Application Link" required>
+            <textarea id="jobDescription" placeholder="Job Description"></textarea>
+            <div class="form-row">
+                <input type="date" id="applicationDate" required>
+                <select id="status" required>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Accepted">Accepted</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Add Application</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <input type="text" id="searchCompany" placeholder="Search by company">
+            <select id="statusFilter">
+                <option value="">All Status</option>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Accepted">Accepted</option>
+            </select>
+            <input type="date" id="dateFilter">
+            <button class="btn clear-btn" onclick="clearFilters()">Clear Filters</button>
+        </div>
+
+        <!-- Applications Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('company')">Company ↕</th>
+                    <th onclick="sortTable('applicationDate')">Date Applied ↕</th>
+                    <th>Job Link</th>
+                    <th onclick="sortTable('status')">Status ↕</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applicationsBody">
+                <!-- Table content will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="dashboard.js"></script>
+    
+</body>
+</html>
